@@ -1,0 +1,81 @@
+function salvaDados(){
+
+    var email = document.getElementById("email").value;
+    var nome  = document.getElementById("nome").value;
+    var sexo  = document.getElementById("sexo");
+    var nomeSexo = sexo.options[sexo.selectedIndex].value; 
+    var curso = document.getElementById("curso");
+    var nomeCurso = curso.options[curso.selectedIndex].value; 
+    var correspondencia = document.getElementById("correspondencia").value;
+    var complemento = document.getElementById("complemento").value 
+    var cep = document.getElementById("cep").value;
+    var municipio = document.getElementById("municipio").value;
+    var uf = document.getElementById("uf");
+    var nomeUf = uf.options[uf.selectedIndex].value;
+
+    localStorage.setItem('Email', email);
+    localStorage.setItem('Nome', nome);
+    localStorage.setItem('Sexo', nomeSexo);
+    localStorage.setItem('Curso',nomeCurso);
+    localStorage.setItem('Correspondencia', correspondencia);
+    localStorage.setItem('Complemento', complemento);
+    localStorage.setItem('Cep', cep);
+    localStorage.setItem('Municipio', municipio);
+    localStorage.setItem('UF', nomeUf);
+
+}
+
+
+
+    if(localStorage.Email){
+            document.getElementById('email').value = localStorage.Email;
+    }
+    if(localStorage.Nome){
+            document.getElementById('nome').value = localStorage.Nome;
+    }
+    if(localStorage.Sexo){
+            document.getElementById('sexo').value = localStorage.Sexo;
+    }
+    if(localStorage.Curso){
+            document.getElementById('curso').value = localStorage.Curso;
+    }
+    if(localStorage.Correspondencia){
+            document.getElementById('correspondencia').value = localStorage.Correspondencia;
+    }
+    if(localStorage.Complemento){
+            document.getElementById('complemento').value = localStorage.Complemento;
+    }
+    if(localStorage.Cep){
+            document.getElementById('cep').value = localStorage.Cep;
+    }
+    if(localStorage.Municipio){
+            document.getElementById('municipio').value = localStorage.Municipio;
+    }
+    if(localStorage.UF){
+            document.getElementById('uf').value = localStorage.UF;
+    }
+
+
+ //var useJson = JSON.stringify(obj);
+
+		FORMA 1
+
+		var useJson = JSON.stringify(obj);
+                localStorage.setItem(obj.email, "Email: " + obj.email + " Nome: " + obj.nome +
+                " Sexo: " + obj.nomeSexo + " Curso: " + obj.nomeCurso + " Endereço: " + 
+                obj.correspondencia + " Complemento: " + obj.complemento + " CEP: " + obj.cep 
+                + " Municipio: " + obj.municipio + " UF: " + obj.nomeUf );
+
+
+		FORMA 2
+
+		{"email":"nascimento.conceito@gmail.com","nome":"FELIPPE DO NASCIMENTO","nomeSexo":"masculino","nomeCurso":"informatica","correspondencia":"Rua Carlos Maia","complemento":"Lote 25 Quadra 2","cep":"25220682","municipio":"Duque de Caxias","nomeUf":"RJ"}	
+                
+
+                
+               
+
+
+
+    
+

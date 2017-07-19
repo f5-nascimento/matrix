@@ -1,0 +1,171 @@
+<!DOCTYPE hmtl>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Dados</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
+        <link rel="stylesheet" href="css/materialize.css">
+        
+          
+    </head>
+    <body>
+         <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo center" >Ficha de Cadastro</a>
+                <ul class="left hide-on-med-and-down">
+                  <li><a href="https://github.com/f5-nascimento" target="_blank">Github</a></li>
+                  <li><a href="https://www.linkedin.com/in/nascimentof/" target="_blank">Linkedin</a></li>
+                  <li class="active"><a href="https://www.skoob.com.br/usuario/4430402-felippenascimento" target="_blank">Skoob</a></li>
+                 </ul>
+            </div>
+          </nav>
+          <br/>
+        <div class="container">
+        <div id="formulario">     
+        <form id="form">
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input v-model="email" type="email" name="email" id="email"/>
+                <label for="email">Endereço de e-mail:</label>
+            </div>
+        </div>
+
+        <div class="row"> 
+            <div class="input-field col s12">
+                <input v-model="nome" type="text" name="nome" id="nome"/>
+                <label for="nome">Nome:</label>
+            </div> 
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <select class="browser-default" v-model="sexo" name="sexo" id="sexo">
+                   <option disabled selected/>
+  			       <option value="Masculino">Masculino</option>
+                   <option value="Feminino">Feminino</option>
+                    
+                </select>
+                <label for="sexo">Sexo:</label>
+            </div>
+        </div>
+
+       
+        <div class="row">
+            <div class="input-field col s12">
+                <select class="browser-default" v-model="curso" name="curso" id="curso">
+                    <option disabled selected/>
+                    <option value="informatica">Curso Técnico em Informática</option>
+                    <option value="alimentos">Curso Técnico em Alimentos</option>
+                    <option value="agropecuaria">Curso Técnico em Agropecuária</option>
+                </select>
+                <label for="curso">Curso:</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input v-model="correspondencia" type="text" name="correspondencia" id="correspondencia"/>
+                <label for="correspondencia">Endereço para correspondência:</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input v-model="complemento" type="text" name="complemento" id="complemento"/>
+                <label for="complemento">Complemento do endereço:</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input v-model="cep" type="text" name="cep" id="cep"/>
+                <label for="cep">CEP:</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s10">
+                <input v-model="municipio" type="text"  name="municipio" id="municipio"/>
+                <label for="municipio">Município:</label>
+            </div>
+
+            <div class="input-field col s2">
+                <select class="browser-default" v-model="uf" name="uf" id="uf">
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AM">AM</option>
+                    <option value="AP">AP</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MG">MG</option>
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="PR">PR</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS" selected>RS</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SE">SE</option>
+                    <option value="SP">SP</option>
+                    <option value="TO">TO</option>
+                </select>
+        </div>
+        </div>
+
+        <div class="row">
+            <div>
+                <button class="btn waves-effect waves-light" type="submit" @click="salvar" id="btnSalvar">Salvar</button>
+                <a href="form-cadastros.html" class="btn waves-effect waves-light" id="btnConsulta">Ver todos</a>      
+        </div>
+            </div>
+        </div>
+
+        </form>
+        </div>
+        </div>
+        <br/>
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Projeto Matrix</h5>
+                <p class="grey-text text-lighten-4">O projeto Matrix traz uma abordagem imersiva e inovadora da qual, aliadas ao conceitos de mentoring e learn by doing, possibilitará a um grupo de estudantes de Tecnologia da Informação a vivenciarem diversas situações do cotidiano do setor de desenvolvimento de software</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="http://cariocadev.com.br/" target="_blank">UnicariocaDev</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.unicarioca.edu.br/" target="_blank">Unicarioca</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://projetomatrix.cariocadev.com.br/" target="_blank">Projeto Matrix</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2017 Copyright Projeto Matrix
+            <a class="grey-text text-lighten-4 right" href="http://materializecss.com/" target="_blank">Materialize</a>
+            </div>
+          </div>
+        </footer>
+           
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>     
+        <script src="js/materialize.js"></script>   
+        <script src="js/inicializacao.js"></script>
+        <script src="js/salvar.js"></script> 
+        
+
+    </body>
+</html>

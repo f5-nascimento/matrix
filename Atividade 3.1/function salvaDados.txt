@@ -1,0 +1,76 @@
+
+function salvaDados(){
+
+        var obj = {
+
+                email : document.getElementById("email").value,
+                nome  : document.getElementById("nome").value,
+                sexo  : document.getElementById("sexo"),
+                nomeSexo : sexo.options[sexo.selectedIndex].value,
+                curso : document.getElementById("curso"),
+                nomeCurso : curso.options[curso.selectedIndex].value, 
+                correspondencia : document.getElementById("correspondencia").value,
+                complemento : document.getElementById("complemento").value,
+                cep : document.getElementById("cep").value,
+                municipio : document.getElementById("municipio").value,
+                uf : document.getElementById("uf"),
+                nomeUf : uf.options[uf.selectedIndex].value,
+
+
+        }
+
+        function setDados(){
+                var usenJson = JSON.stringify(obj);
+                localStorage.setItem('Email', obj.email);
+                localStorage.setItem('Nome', obj.nome);
+                localStorage.setItem('Sexo', obj.nomeSexo);
+                localStorage.setItem('Curso', obj.nomeCurso);
+                localStorage.setItem('Correspondencia', obj.correspondencia);
+                localStorage.setItem('Complemento', obj.complemento);
+                localStorage.setItem('Cep', obj.cep);
+                localStorage.setItem('Municipio', obj.municipio);
+                localStorage.setItem('UF', obj.nomeUf);
+                usenJson = JSON.parse(obj);
+                
+      }
+                setDados();
+                
+
+               
+}
+
+ (function getDados(){
+                
+                if(localStorage.Email){
+                        document.getElementById('email').value = localStorage.Email;
+                }
+                if(localStorage.Nome){
+                        document.getElementById('nome').value = localStorage.Nome;
+                }
+                if(localStorage.Sexo){
+                        document.getElementById('sexo').value = localStorage.Sexo;
+                }
+                if(localStorage.Curso){
+                        document.getElementById('curso').value = localStorage.Curso;
+                }
+                if(localStorage.Correspondencia){
+                        document.getElementById('correspondencia').value = localStorage.Correspondencia;
+                }
+                if(localStorage.Complemento){
+                        document.getElementById('complemento').value = localStorage.Complemento;
+                }
+                if(localStorage.Cep){
+                        document.getElementById('cep').value = localStorage.Cep;
+                }
+                if(localStorage.Municipio){
+                        document.getElementById('municipio').value = localStorage.Municipio;
+                }
+                if(localStorage.UF){
+                        document.getElementById('uf').value = localStorage.UF;
+                }
+                                
+      })();
+
+             
+              
+        

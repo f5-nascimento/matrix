@@ -1,0 +1,143 @@
+<!DOCTYPE hmtl>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Formulário</title>
+        <link rel="stylesheet" href="formulario.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
+    </head>
+    <body>
+        <div id="formulario">
+        <form>
+        <div>
+            <label for="email">Endereço de e-mail:</label>
+            <input v-model="email" type="email" name="email" id="email"/>
+        </div>
+        <div>
+            <label for="nome">Nome:</label>
+            <input v-model="nome" type="text" name="nome" id="nome"/>
+        </div> 
+        <div>  
+            <label for="sexo">Sexo:</label>
+            <select v-model="sexo" name="sexo" id="sexo">
+                <option disabled selected/>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+            </select>
+        </div>
+        <div>  
+            <label for="curso">Curso:</label>
+            <select v-model="curso" name="curso" id="curso">
+                <option disabled selected/>
+                <option value="informatica">Curso Técnico em Informática</option>
+                <option value="alimentos">Curso Técnico em Alimentos</option>
+                <option value="agropecuaria">Curso Técnico em Agropecuária</option>
+            </select>
+        </div>
+         <div>
+            <label for="correspondencia">Endereço para correspondência:</label>
+            <input v-model="correspondencia" type="text" name="correspondecia" id="correspondencia"/>
+        </div>
+        <div>
+            <label for="complemento">Complemento do endereço:</label>
+            <input v-model="complemento" type="text"  name="complemento" id="complemento"/>
+        </div>
+        <div>
+            <label for="cep">CEP:</label>
+            <input v-model="cep" class="cep" type="text" name="cep" id="cep"/>
+        </div>
+        <div>
+            <label for="municipio">Município:</label>
+            <input v-model="municipio" class="municipio" type="text"  name="municipio" id="municipio"/>
+            <select v-model="uf"    class="uf" name="uf" id="uf">
+	            <option value="AC">AC</option>
+	            <option value="AL">AL</option>
+	            <option value="AM">AM</option>
+	            <option value="AP">AP</option>
+	            <option value="BA">BA</option>
+	            <option value="CE">CE</option>
+	            <option value="DF">DF</option>
+	            <option value="ES">ES</option>
+	            <option value="GO">GO</option>
+                <option value="MA">MA</option>
+                <option value="MG">MG</option>
+                <option value="MS">MS</option>
+                <option value="MT">MT</option>
+                <option value="PA">PA</option>
+                <option value="PB">PB</option>
+                <option value="PE">PE</option>
+                <option value="PI">PI</option>
+                <option value="PR">PR</option>
+                <option value="RJ">RJ</option>
+                <option value="RN">RN</option>
+                <option value="RS" selected>RS</option>
+                <option value="RO">RO</option>
+                <option value="RR">RR</option>
+                <option value="SC">SC</option>
+                <option value="SE">SE</option>
+                <option value="SP">SP</option>
+                <option value="TO">TO</option>
+             </select>
+        </div>
+        <div>
+            <button type="submit"  @click="salvar">Salvar</button>
+        </div>     
+        </form>
+        </div>
+        <script>
+          var chave;
+
+            new Vue({
+                el:"#formulario",
+                data:function(){
+                    return chave = {
+  
+                      email : "",
+                      nome  : "",
+                      sexo  : "",
+                      curso : "", 
+                      correspondencia : "",
+                      complemento : "",
+                      cep : "",
+                      municipio : "",
+                      uf : ""
+                    
+                                };
+                    
+                        },
+                     
+                methods: {
+				salvar: function(){		
+
+					localStorage.setItem("cadastro", JSON.stringify(chave));
+                                      				
+				}
+                    
+                
+                 },
+                created: function(){
+                    var resultado = localStorage.getItem("cadastro");
+               
+                          var dados = JSON.parse(resultado);
+                          this.nome = dados.nome;
+                          this.email = dados.email;
+                          this.sexo = dados.sexo;
+                          this.curso = dados.curso;
+                          this.correspondencia = dados.correspondencia;
+                          this.complemento = dados.complemento;
+                          this.cep=dados.cep;
+                          this.municipio = dados.municipio;
+                          this.uf = dados.uf;
+                       
+
+                 }
+           
+                })
+          
+     
+        </script>
+
+                
+
+    </body>
+</html>
